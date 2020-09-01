@@ -1,0 +1,26 @@
+{
+  "name": "toolforge-node-app-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+	  "test": "export PORT=3000 && node server.js",
+    "start": "node server.js",
+    "deploy": "webservice --backend kubernetes node10 restart",
+    "logs": "kubectl logs -f $(kubectl get pods | head -2 | tail -1 | cut -d ' ' -f 1)"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "",
+  "homepage": "",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mwn": "^0.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.1.0"
+  }
+}
